@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Unified Authentication Spring Implementation">
+	<publishDate position="navigation-bottom" />
+	<bannerLeft>
+		<name>MyCom</name>
+		<src>../images/logos/spring_java.png</src>
+		<href>https://mycom.com</href>
+	</bannerLeft>
+	<bannerRight>
+		<name>spring-boot-rest</name>
+		<href>index.html</href>
+	</bannerRight>
+	<body>
+		<breadcrumbs>
+			<item name="name" href="../index.html" />
+		</breadcrumbs>
+		<menu name="Overview">
+			<item name="About" href="/index.html" />
+			<item name="Javadocs" href="/apidocs/index.html" target="_blank" />
+		</menu>
+		<menu ref="reports" />
+	</body>
+</project>

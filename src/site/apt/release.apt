@@ -1,0 +1,23 @@
+ ------
+ Release Notes
+ ------
+ Author
+ ------
+ yyyy-dd-mm
+ ------
+
+spring-boot-rest Web Application/Service Release Notes
+
+  spring-boot-rest 1.0 was released on mm/dd/yyyy.
+
+* Highlights
+
+  [[1]] Highlight 1
+
+
+* Release Notes
+
+	** Improvement
+
+		* [SDEV-XXX] - XXX
+

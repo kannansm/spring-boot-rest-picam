@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" monitorInterval="5"
+	packages="com.mycom.logging">
+	<Properties>
+		<Property name="log-path">./target
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c - %msg%n" />
+		</Console>
+
+		<RollingFile name="app-log" fileName="${log-path}/app.log"
+			filePattern="${log-path}/app-%d{yyyy-MM-dd}-%i.log">
+
+			<PatternLayout
+				pattern="%-5level|%d{yyyy-MM-dd'T'HH:mm:ss.SSSX}{GMT}|%X{TRANSACTION_ID}%X{UID}|%t|%C|%msg|%n" />
+
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+
+			<DefaultRolloverStrategy max="500">
+				<Delete basePath="${log-path}">
+					<IfAccumulatedFileSize exceeds="10 GB" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+
+		<!-- root logger -->
+		<Root level="error" additivity="false">
+			<AppenderRef ref="console" />
+			<!-- <AppenderRef ref="app-log" />-->
+		</Root>
+
+		<!-- package/class level logger -->
+		<Logger name="com.mycom" level="debug" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="app-log" />
+		</Logger>
+
+	</Loggers>
+
+</Configuration>
